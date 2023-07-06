@@ -27,9 +27,5 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<cr>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<cr>zz")
 
--- Splits navigation
--- vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {noremap = true, silent = true})
--- vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {noremap = true, silent = true})
-
+-- Alternate between two files
+vim.keymap.set("n", "<C-i>", "<C-6>")
