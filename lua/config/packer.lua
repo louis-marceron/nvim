@@ -56,15 +56,15 @@ return require('packer').startup(function(use)
         },
     }
 
-    -- use({
-    --     "Pocco81/auto-save.nvim",
-    --     config = function()
-    --          require("auto-save").setup {
-    --             -- your config goes here
-    --             -- or just leave it empty :)
-    --          }
-    --     end,
-    -- })
+    use({
+        "Pocco81/auto-save.nvim",
+        config = function()
+             require("auto-save").setup {
+                -- your config goes here
+                -- or just leave it empty :)
+             }
+        end,
+    })
 
     use('tpope/vim-commentary')
 
@@ -76,4 +76,23 @@ return require('packer').startup(function(use)
     })
 
     use('mbbill/undotree')
+
+    use('renerocksai/telekasten.nvim')
+
+    use "lukas-reineke/indent-blankline.nvim"
+
+    -- Create automatically closing )}"'...
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
+    -- VS Code live server equivalent
+    use({
+        "aurum77/live-server.nvim",
+        run = function()
+            require "live_server.util".install()
+        end,
+        cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
+    })
 end)
