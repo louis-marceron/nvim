@@ -59,10 +59,10 @@ return require('packer').startup(function(use)
     use({
         "Pocco81/auto-save.nvim",
         config = function()
-             require("auto-save").setup {
+            require("auto-save").setup {
                 -- your config goes here
                 -- or just leave it empty :)
-             }
+            }
         end,
     })
 
@@ -95,4 +95,15 @@ return require('packer').startup(function(use)
         end,
         cmd = { "LiveServer", "LiveServerStart", "LiveServerStop" },
     })
+
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    use { 'github/copilot.vim' }
+
+    -- use { 'nvim-tree/nvim-tree.lua' }
+
+    -- use { 'nvim-tree/nvim-web-devicons', config = function() require 'nvim-web-devicons'.setup {} end }
 end)

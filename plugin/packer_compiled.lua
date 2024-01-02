@@ -95,6 +95,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\copilot.vim",
+    url = "https://github.com/github/copilot.vim"
+  },
   ["dressing.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dressing.nvim",
@@ -127,6 +132,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-zero.nvim",
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
@@ -167,10 +177,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
-  ["obsidian.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\obsidian.nvim",
-    url = "https://github.com/epwalsh/obsidian.nvim"
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "C:\\Users\\Louis\\AppData\\Local\\nvim-data\\site\\pack\\packer\\opt\\nvim-web-devicons",
+    url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -225,30 +236,30 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
 -- Config for: auto-save.nvim
 time([[Config for auto-save.nvim]], true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14auto-save\frequire\0", "config", "auto-save.nvim")
 time([[Config for auto-save.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'LiveServerStart', function(cmdargs)
-          require('packer.load')({'live-server.nvim'}, { cmd = 'LiveServerStart', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
-        end,
-        {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'live-server.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('LiveServerStart ', 'cmdline')
-      end})
 pcall(vim.api.nvim_create_user_command, 'LiveServerStop', function(cmdargs)
           require('packer.load')({'live-server.nvim'}, { cmd = 'LiveServerStop', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'live-server.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('LiveServerStop ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'LiveServer', function(cmdargs)
+          require('packer.load')({'live-server.nvim'}, { cmd = 'LiveServer', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'live-server.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('LiveServer ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
           require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -257,12 +268,12 @@ pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
           require('packer.load')({'nvim-code-action-menu'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('CodeActionMenu ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'LiveServer', function(cmdargs)
-          require('packer.load')({'live-server.nvim'}, { cmd = 'LiveServer', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'LiveServerStart', function(cmdargs)
+          require('packer.load')({'live-server.nvim'}, { cmd = 'LiveServerStart', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
           require('packer.load')({'live-server.nvim'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('LiveServer ', 'cmdline')
+          return vim.fn.getcompletion('LiveServerStart ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 
