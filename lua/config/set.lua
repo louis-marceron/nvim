@@ -23,13 +23,13 @@ vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
 
--- Browsing (netrw)
+-- Highlight on yank 
+vim.cmd 'au TextYankPost * lua vim.highlight.on_yank {on_visual = false}'
+
 -- Line numbers in browsing
 vim.g.netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 -- Hide top banner
 vim.g.netrw_banner = 0
--- Treeview by default 
-vim.g.netrw_liststyle = 3
 
 
 
