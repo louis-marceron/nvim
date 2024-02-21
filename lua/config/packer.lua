@@ -101,8 +101,4 @@ return require('packer').startup(function(use)
     }
 
     use { 'github/copilot.vim' }
-
-    -- use { 'nvim-tree/nvim-tree.lua' }
-
-    -- use { 'nvim-tree/nvim-web-devicons', config = function() require 'nvim-web-devicons'.setup {} end }
 end)
