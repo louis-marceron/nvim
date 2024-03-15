@@ -28,6 +28,7 @@ require('lazy').setup {
   require 'plugins.harpoon',
   require 'plugins.debug',
   require 'plugins.copilot',
+  require 'plugins.neogit',
   -- require 'kickstart.plugins.filetree',
 }
 
