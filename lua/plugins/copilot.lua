@@ -9,9 +9,9 @@ return {
       },
       suggestion = {
         auto_trigger = true,
-      },
-      keymap = {
-        accept = '<Tab>',
+        keymap = {
+          accept = '<C-f>',
+        },
       },
     }
   end,

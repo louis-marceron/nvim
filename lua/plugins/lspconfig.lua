@@ -91,6 +91,9 @@ return {
           --  See `:help K` for why this keymap
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
+          -- Open popup that displays details about the error under your cursor
+          map('<leader>vd', vim.diagnostic.open_float, '[V]iew [D]iagnostics')
+
           -- WARN: This is not Goto Definition, this is Goto Declaration.
           --  For example, in C this would take you to the header
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
