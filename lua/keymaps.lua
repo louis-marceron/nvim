@@ -62,3 +62,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Paste without putting the deleted content in the NeoVim clipboard
+vim.keymap.set('x', '<leader>p', [["_dP]])
+-- Copy to the OS clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+-- Delete without putting the deleted content in the NeoVim clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])

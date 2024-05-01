@@ -29,6 +29,7 @@ require('lazy').setup {
   require 'plugins.debug',
   require 'plugins.copilot',
   require 'plugins.neogit',
+  require 'plugins.flutter-tools',
   -- require 'kickstart.plugins.filetree',
 }
 

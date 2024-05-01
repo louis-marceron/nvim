@@ -15,6 +15,9 @@ return {
         changedelete = { text = '~' },
       },
     },
+    config = function()
+      vim.keymap.set('n', '<leader>gp', ':Gitsigns preview_hunk')
+    end,
   },
 }
 -- vim: ts=2 sts=2 sw=2 et

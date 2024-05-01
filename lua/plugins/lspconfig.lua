@@ -145,7 +145,8 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {},
+        terraformls = {},
         --
 
         lua_ls = {
@@ -189,6 +190,7 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
+        'terraformls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
