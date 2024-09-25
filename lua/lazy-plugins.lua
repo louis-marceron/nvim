@@ -12,6 +12,7 @@ require('lazy').setup {
   --    require('Comment').setup({})
 
   { 'numToStr/Comment.nvim', opts = {} },
+  { 'typicode/bg.nvim', lazy = false },
 
   require 'plugins/gitsigns',
   require 'plugins/which-key',
@@ -30,7 +31,19 @@ require('lazy').setup {
   require 'plugins.copilot',
   require 'plugins.neogit',
   require 'plugins.flutter-tools',
+  require 'plugins.metals',
+  require 'plugins.themery',
+  require 'plugins.rose-pine', -- rose-pine
+  require 'plugins.gruvbox',
+  require 'plugins.yazi',
   -- require 'kickstart.plugins.filetree',
 }
+
+local metals = require 'metals'
+local metals_config = metals.bare_config()
+metals_config.on_attach = function(client, bufnr)
+  print 'LSP Attached!'
+end
+metals.initialize_or_attach(metals_config)
 
 -- vim: ts=2 sts=2 sw=2 et

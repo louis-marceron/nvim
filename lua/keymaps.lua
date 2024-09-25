@@ -52,6 +52,14 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- Alternate between two files
 vim.keymap.set('n', '<C-i>', '<C-6>')
 
+-- Paste without putting the deleted content in the NeoVim clipboard
+vim.keymap.set('x', '<leader>p', [["_dP]])
+-- Copy to the OS clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+-- Delete without putting the deleted content in the NeoVim clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
+
 -- [[ Basic Autocommands ]]
 
 -- Highlight when yanking (copying) text
@@ -62,11 +70,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- Paste without putting the deleted content in the NeoVim clipboard
-vim.keymap.set('x', '<leader>p', [["_dP]])
--- Copy to the OS clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
-vim.keymap.set('n', '<leader>Y', [["+Y]])
--- Delete without putting the deleted content in the NeoVim clipboard
-vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]])
