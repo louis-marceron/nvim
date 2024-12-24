@@ -20,7 +20,7 @@ return {
       superMethodLensesEnabled = true,
     }
     metals_config.init_options.statusBarProvider = 'on'
-    metals_config.capabilities = require('cmp_nvim_lsp').default_capabilities()
+    metals_config.capabilities = require('blink.cmp').get_lsp_capabilities()
 
     local nvim_metals_group = vim.api.nvim_create_augroup('nvim-metals', { clear = true })
     vim.api.nvim_create_autocmd('FileType', {

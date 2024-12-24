@@ -13,13 +13,16 @@ require('lazy').setup {
 
   { 'numToStr/Comment.nvim', opts = {} },
   { 'typicode/bg.nvim', lazy = false },
+  -- { 'sphamba/smear-cursor.nvim', opts = {} },
+  { 'max397574/better-escape.nvim', opts = {} },
 
   require 'plugins/gitsigns',
   require 'plugins/which-key',
   require 'plugins/telescope',
   require 'plugins/lspconfig',
   require 'plugins/conform',
-  require 'plugins/cmp',
+  -- require 'plugins/cmp',
+  require 'plugins/blink',
   require 'plugins/tokyonight',
   require 'plugins/todo-comments',
   require 'plugins/mini',
@@ -28,7 +31,7 @@ require('lazy').setup {
   require 'plugins.indent_line',
   require 'plugins.harpoon',
   require 'plugins.debug',
-  require 'plugins.copilot',
+  -- require 'plugins.copilot',
   require 'plugins.neogit',
   require 'plugins.flutter-tools',
   require 'plugins.metals',
@@ -36,7 +39,8 @@ require('lazy').setup {
   require 'plugins.rose-pine', -- rose-pine
   require 'plugins.gruvbox',
   require 'plugins.yazi',
-  -- require 'kickstart.plugins.filetree',
+  require 'plugins.kitty-scrollback',
+  require 'plugins.vim-flog',
 }
 
 local metals = require 'metals'

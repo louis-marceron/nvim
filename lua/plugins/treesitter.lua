@@ -11,7 +11,11 @@ return {
         -- Autoinstall languages that are not installed
         auto_install = true,
         highlight = { enable = true },
-        indent = { enable = true },
+        indent = {
+          -- Fix identing issues in dart
+          disable = { 'dart' },
+          enable = true,
+        },
         incremental_selection = {
           enable = true,
           keymaps = {
