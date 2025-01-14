@@ -13,7 +13,6 @@ require('lazy').setup {
 
   { 'numToStr/Comment.nvim', opts = {} },
   { 'typicode/bg.nvim', lazy = false },
-  -- { 'sphamba/smear-cursor.nvim', opts = {} },
   { 'max397574/better-escape.nvim', opts = {} },
 
   require 'plugins/gitsigns',
@@ -21,7 +20,6 @@ require('lazy').setup {
   require 'plugins/telescope',
   require 'plugins/lspconfig',
   require 'plugins/conform',
-  -- require 'plugins/cmp',
   require 'plugins/blink',
   require 'plugins/tokyonight',
   require 'plugins/todo-comments',
@@ -41,6 +39,7 @@ require('lazy').setup {
   require 'plugins.yazi',
   require 'plugins.kitty-scrollback',
   require 'plugins.vim-flog',
+  require 'plugins.lsp_lines',
 }
 
 local metals = require 'metals'
