@@ -39,14 +39,13 @@ require('lazy').setup {
   require 'plugins.yazi',
   require 'plugins.kitty-scrollback',
   require 'plugins.vim-flog',
-  require 'plugins.lsp_lines',
+  -- require 'plugins.lsp_lines',
+  require 'plugins.flutter-bloc',
+  -- require 'plugins.auto-dark-mode',
 }
 
 local metals = require 'metals'
 local metals_config = metals.bare_config()
-metals_config.on_attach = function(client, bufnr)
-  print 'LSP Attached!'
-end
 metals.initialize_or_attach(metals_config)
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -6,4 +6,9 @@ return {
     'stevearc/dressing.nvim', -- optional for vim.ui.select
   },
   config = true,
+  lsp = {
+    color = { -- show the derived colours for dart variables
+      enabled = true,
+    },
+  },
 }
