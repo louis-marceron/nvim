@@ -3,10 +3,36 @@
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear highlights on search' })
 
--- Diagnostic keymaps
+vim.keymap.set('i', 'jk', '<esc>', { desc = 'Leave insert mode' })
+
+-- Doesn't seem to work since 'q' is closing the list
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move the selection up' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move the selection down' })
+
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Keep the cursor in the middle when doing half-page up jump' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Keep the cursor in the middle when doing half-page down jump' })
+
+vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Keep the cursor in the middle when searching for terms' })
+vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Keep the cursor in the middle when searching for terms' })
+
+vim.keymap.set('x', 'p', '_dp', { desc = 'Paste without putting the delete content in the clipboard' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without putting the deleted content in the Neovim clipboard' })
+
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Copy to the OS clipboard' })
+
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
+
+vim.keymap.set('n', '<C-i>', '<C-6>', { desc = 'Alternate between two files' })
+
+vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when joining line below' })
+
+vim.keymap.set('v', '<', '<gv', { desc = 'Indent selection left multiple times without re-selecting it' })
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent selection right multiple times without re-selecting it' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -16,26 +42,9 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word cursor is on globally on the file' })
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-
--- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+vim.keymap.set('n', '<leader>cc', 'yy<cmd>normal gcc<CR>p', { desc = 'Duplicate line, comment original, move down' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
