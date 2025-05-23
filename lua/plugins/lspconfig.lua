@@ -140,7 +140,7 @@ return {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
-        rust_analyzer = {},
+        -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -198,6 +198,8 @@ return {
 
       require('mason-lspconfig').setup {
         handlers = {
+          rust_analyzer = function() end,
+
           function(server_name)
             local server = servers[server_name] or {}
             -- This handles overriding only values explicitly passed

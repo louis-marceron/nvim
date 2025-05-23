@@ -42,6 +42,7 @@ require('lazy').setup {
   -- require 'plugins.lsp_lines',
   require 'plugins.flutter-bloc',
   -- require 'plugins.auto-dark-mode',
+  require 'plugins.rustaceanvim',
 }
 
 local metals = require 'metals'
