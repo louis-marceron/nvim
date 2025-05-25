@@ -70,9 +70,6 @@ vim.o.confirm = true
 --  Enable 24-bit RGB color in the TUI
 vim.opt.termguicolors = true
 
--- Add border to floating windows
-vim.o.winborder = 'single'
-
 -- Relative line number inside file explorer
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 

@@ -17,12 +17,6 @@ require('lazy').setup({
   --
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
 
-  -- {
-  --   'nvim-java/nvim-java',
-  --   config = function()
-  --     require('java').setup()
-  --   end,
-  -- },
   require 'plugins/gitsigns',
   require 'plugins/which-key',
   require 'plugins/telescope',
@@ -45,12 +39,8 @@ require('lazy').setup({
   require 'plugins.themery',
   { 'rose-pine/neovim', name = 'rose-pine' },
   require 'plugins.yazi',
-
-  -- If exit code 13 : rm ~/.cache/jdtls/
-  -- https://github.com/LazyVim/LazyVim/discussions/4470
-  --
-  -- https://eruizc.dev/blog/en/java-with-neovim/
   require 'plugins.jdtls',
+  require 'plugins.oil',
 
   -- require 'kickstart.plugins.neo-tree',
 

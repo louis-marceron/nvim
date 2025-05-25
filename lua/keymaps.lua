@@ -25,7 +25,8 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without putt
 
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Copy to the OS clipboard' })
 
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
+-- vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
+vim.keymap.set('n', '<leader>pv', '<cmd>Oil<CR>', { desc = 'Open file explorer' })
 
 vim.keymap.set('n', '<C-i>', '<C-6>', { desc = 'Alternate between two files' })
 

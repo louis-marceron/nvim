@@ -1,3 +1,7 @@
+-- If exit code 13 : rm ~/.cache/jdtls/
+-- https://github.com/LazyVim/LazyVim/discussions/4470
+--
+-- https://eruizc.dev/blog/en/java-with-neovim/
 return {
   'mfussenegger/nvim-jdtls',
   dependencies = { 'folke/which-key.nvim' },
