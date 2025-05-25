@@ -42,7 +42,7 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Indent selection right multiple times 
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
-vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = 'Replace word cursor is on globally on the file' })
+vim.keymap.set('n', '<leader>rw', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace [w]ord cursor is on globally on the file' })
 
 vim.keymap.set('n', '<leader>cc', 'yy<cmd>normal gcc<CR>p', { desc = 'Duplicate line, comment original, move down' })
 

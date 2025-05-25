@@ -8,9 +8,7 @@
 --  To update plugins you can run
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -19,39 +17,41 @@ require('lazy').setup({
   --
   -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
 
+  -- {
+  --   'nvim-java/nvim-java',
+  --   config = function()
+  --     require('java').setup()
+  --   end,
+  -- },
   require 'plugins/gitsigns',
-
   require 'plugins/which-key',
-
   require 'plugins/telescope',
-
   require 'plugins/lspconfig',
-
   require 'plugins/conform',
-
   require 'plugins/blink-cmp',
-
   require 'plugins/tokyonight',
-
   require 'plugins/todo-comments',
-
   require 'plugins/mini',
-
   require 'plugins/treesitter',
+  require 'plugins/autopairs',
+  require 'plugins/debug',
+  require 'plugins/indent_line',
+  require 'plugins/lint',
 
-  -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
+  require 'plugins.harpoon',
+  require 'plugins/neogit',
+  require 'plugins.flutter-tools',
+  require 'plugins.snacks',
+  require 'plugins.themery',
+  { 'rose-pine/neovim', name = 'rose-pine' },
+  require 'plugins.yazi',
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
+  -- If exit code 13 : rm ~/.cache/jdtls/
+  -- https://github.com/LazyVim/LazyVim/discussions/4470
   --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
-  --
-  -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
-  -- require 'kickstart.plugins.lint',
-  -- require 'kickstart.plugins.autopairs',
+  -- https://eruizc.dev/blog/en/java-with-neovim/
+  require 'plugins.jdtls',
+
   -- require 'kickstart.plugins.neo-tree',
 
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
