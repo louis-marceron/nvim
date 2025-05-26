@@ -19,7 +19,7 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Keep the cursor in the middle 
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Keep the cursor in the middle when searching for terms' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Keep the cursor in the middle when searching for terms' })
 
-vim.keymap.set('x', 'p', '_dp', { desc = 'Paste without putting the delete content in the clipboard' })
+vim.keymap.set('x', 'p', '"_dP', { desc = 'Paste without putting the delete content in the clipboard' })
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without putting the deleted content in the Neovim clipboard' })
 

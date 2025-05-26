@@ -76,4 +76,9 @@ vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 -- Add a line length marker
 vim.o.colorcolumn = '80'
 
+-- Indent settings
+vim.o.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
 -- vim: ts=2 sts=2 sw=2 et
