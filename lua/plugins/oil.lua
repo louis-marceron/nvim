@@ -4,6 +4,7 @@ return {
   ---@type oil.SetupOpts
   opts = {
     view_options = {
+      skip_confirm_for_simple_edits = false,
       show_hidden = true,
     },
   },
