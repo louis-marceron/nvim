@@ -45,6 +45,7 @@ require('lazy').setup({
   require 'plugins.hardtime',
   -- require 'plugins.avante',
   require 'plugins.sonarlint',
+  require 'plugins.go',
 
   -- require 'kickstart.plugins.neo-tree',
 
