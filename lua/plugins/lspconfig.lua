@@ -81,7 +81,7 @@ return {
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
 
           -- Find references for the word under your cursor. (see trouble.lua)
-          -- map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
           -- map('grr', vim.lsp.buf.references, '[G]oto [R]eferences')
 
           -- Jump to the implementation of the word under your cursor.
@@ -219,6 +219,14 @@ return {
         rust_analyzer = {},
         ts_ls = {},
         yamlls = {},
+        vacuum = { -- doesn't attach because of issues with filetypes
+          cmd = { 'vacuum', 'language-server' },
+          filetypes = { 'yaml.openapi', 'json.openapi' },
+          root_dir = function(fname)
+            return vim.fs.dirname(vim.fs.find('.git', { path = fname, upward = true })[1])
+          end,
+          single_file_support = true,
+        },
 
         -- clangd = {},
         -- gopls = {},

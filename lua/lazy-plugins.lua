@@ -41,7 +41,11 @@ require('lazy').setup({
   require 'plugins.yazi',
   require 'plugins.jdtls',
   require 'plugins.oil',
-  require 'plugins.trouble',
+  -- require 'plugins.trouble',
+  require 'plugins.go',
+  require 'plugins.hardtime',
+  -- require 'plugins.avante',
+  -- require 'plugins.sonarlint',
   require 'plugins.go',
 
   -- require 'kickstart.plugins.neo-tree',
