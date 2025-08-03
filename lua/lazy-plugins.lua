@@ -43,6 +43,7 @@ require('lazy').setup({
   require 'plugins.oil',
   require 'plugins.go',
   require 'plugins.hardtime',
+  require 'plugins.fff',
 
   -- require 'kickstart.plugins.neo-tree',
 
