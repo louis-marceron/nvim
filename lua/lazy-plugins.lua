@@ -42,6 +42,7 @@ require('lazy').setup({
   require 'plugins.jdtls',
   require 'plugins.oil',
   require 'plugins.trouble',
+  require 'plugins.go',
 
   -- require 'kickstart.plugins.neo-tree',
 
