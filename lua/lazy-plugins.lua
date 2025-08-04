@@ -46,6 +46,7 @@ require('lazy').setup({
   -- require 'plugins.avante',
   -- require 'plugins.sonarlint',
   require 'plugins.go',
+  require 'plugins.ts-context',
 
   -- require 'kickstart.plugins.neo-tree',
 
