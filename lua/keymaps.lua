@@ -28,7 +28,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Copy to the OS clip
 -- vim.keymap.set('n', '<leader>pv', vim.cmd.Ex, { desc = 'Open file explorer' })
 vim.keymap.set('n', '<leader>pv', '<cmd>Oil<CR>', { desc = 'Open file explorer' })
 
-vim.keymap.set('n', '<C-i>', '<C-6>', { desc = 'Alternate between two files' })
+vim.keymap.set('n', '<C-Space>', '<C-6>', { desc = 'Alternate between two files' })
 
 vim.keymap.set('n', 'J', 'mzJ`z', { desc = 'Keep cursor position when joining line below' })
 
