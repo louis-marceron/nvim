@@ -6,6 +6,12 @@
 -- Make line numbers default
 vim.o.number = true
 
+-- Enable all filetype plugins and syntax (if not enabled, for better startup)
+vim.cmd 'filetype plugin indent on'
+if vim.fn.exists 'syntax_on' ~= 1 then
+  vim.cmd 'syntax enable'
+end
+
 -- Show relative line number
 vim.o.relativenumber = true
 
@@ -21,6 +27,12 @@ vim.o.breakindent = true
 -- Indent automatically
 vim.o.autoindent = true
 vim.o.smartindent = true
+
+-- Indent wrapped lines to match line start
+vim.o.breakindent = true
+
+-- Add padding for lists (if 'wrap' is set)
+vim.o.breakindentopt = 'list:-1'
 
 -- Save undo history
 vim.o.undofile = true
