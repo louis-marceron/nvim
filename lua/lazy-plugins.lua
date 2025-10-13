@@ -45,6 +45,8 @@ require('lazy').setup({
   require 'plugins.hardtime',
   require 'plugins.fff',
   require 'plugins.ts-context',
+  -- To have correct dart formating
+  'dart-lang/dart-vim-plugin',
 
   -- require 'kickstart.plugins.neo-tree',
 
