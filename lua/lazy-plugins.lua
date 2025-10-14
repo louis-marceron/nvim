@@ -45,6 +45,8 @@ require('lazy').setup({
   require 'plugins.hardtime',
   require 'plugins.fff',
   require 'plugins.ts-context',
+  -- C#
+  require 'plugins.roslyn',
 
   -- require 'kickstart.plugins.neo-tree',
 
