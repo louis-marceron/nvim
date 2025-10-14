@@ -5,6 +5,8 @@
 return {
   'mfussenegger/nvim-jdtls',
   dependencies = { 'folke/which-key.nvim' },
+  lazy = true,
+  ft = { 'java' },
   config = function()
     require('jdtls').start_or_attach {
       cmd = {
