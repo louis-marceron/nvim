@@ -46,7 +46,8 @@ require('lazy').setup({
   require 'plugins.fff',
   require 'plugins.ts-context',
   -- C#
-  require 'plugins.roslyn',
+  -- require 'plugins.roslyn',
+  require 'plugins.easy-dotnet',
   -- To have correct dart formating
   'dart-lang/dart-vim-plugin',
 
