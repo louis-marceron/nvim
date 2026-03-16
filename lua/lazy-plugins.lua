@@ -46,10 +46,11 @@ require('lazy').setup({
   require 'plugins.fff',
   require 'plugins.ts-context',
   -- C#
-  -- require 'plugins.roslyn',
   require 'plugins.easy-dotnet',
-  -- To have correct dart formating
+  -- To have correct dart formatting
   'dart-lang/dart-vim-plugin',
+  -- AI
+  'github/copilot.vim',
 
   -- require 'kickstart.plugins.neo-tree',
 
