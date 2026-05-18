@@ -34,7 +34,7 @@ require('lazy').setup({
 
   require 'plugins.harpoon',
   require 'plugins/neogit',
-  require 'plugins.flutter-tools',
+  -- require 'plugins.flutter-tools',
   require 'plugins.snacks',
   require 'plugins.themery',
   { 'rose-pine/neovim', name = 'rose-pine' },
