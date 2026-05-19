@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "arborist.nvim": {
+      "rev": "8a5bdf7bab9b4fc11aa3e9ceabb22bf3d71d904f",
+      "src": "https://github.com/arborist-ts/arborist.nvim"
+    },
     "neogit": {
       "rev": "792c139da736230855e8341ebe6175bb6eb8268b",
       "src": "https://github.com/NeogitOrg/neogit"
