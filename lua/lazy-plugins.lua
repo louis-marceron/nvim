@@ -42,7 +42,6 @@ require('lazy').setup({
   require 'plugins.jdtls',
   require 'plugins.oil',
   require 'plugins.go',
-  require 'plugins.hardtime',
   require 'plugins.fff',
   require 'plugins.ts-context',
   -- C#
