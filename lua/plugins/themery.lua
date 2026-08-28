@@ -1,4 +1,8 @@
-vim.pack.add({ 'https://github.com/zaldih/themery.nvim' }, { load = true, confirm = false })
+vim.pack.add({
+  'https://github.com/folke/tokyonight.nvim',
+  { src = 'https://github.com/rose-pine/neovim', name = 'rose-pine' },
+  'https://github.com/zaldih/themery.nvim',
+}, { load = true, confirm = false })
 
 require('themery').setup {
   themes = {
@@ -21,4 +25,4 @@ vim.keymap.set('n', '<leader>tt', function()
   else
     themery.setThemeByName('rose-pine-main', true)
   end
-end, { desc = '[T]oggle light or dark theme', noremap = true })
+end, { desc = '[T]oggle light or dark theme' })

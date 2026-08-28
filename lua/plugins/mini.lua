@@ -1,5 +1,5 @@
 -- Collection of various small independent plugins/modules
-vim.pack.add({ 'https://github.com/echasnovski/mini.nvim' }, { load = true, confirm = false })
+vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' }, { load = true, confirm = false })
 
 -- Better Around/Inside textobjects
 --
@@ -32,5 +32,5 @@ statusline.section_location = function()
 end
 
 -- ... and there is more!
---  Check out: https://github.com/echasnovski/mini.nvim
+--  Check out: https://github.com/nvim-mini/mini.nvim
 -- vim: ts=2 sts=2 sw=2 et

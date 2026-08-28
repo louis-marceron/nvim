@@ -1,10 +1,7 @@
 vim.pack.add({
-  { src = 'https://github.com/L3MON4D3/LuaSnip', version = vim.version.range '2.*' },
   'https://github.com/folke/lazydev.nvim',
   { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range '1.*' },
 }, { load = true, confirm = false })
-
-require('luasnip').setup {}
 
 --- @module 'blink.cmp'
 --- @type blink.cmp.Config
@@ -32,9 +29,6 @@ require('blink.cmp').setup {
     --
     -- See :h blink-cmp-config-keymap for defining your own keymap
     preset = 'default',
-
-    -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
-    --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
   },
 
   appearance = {
@@ -55,8 +49,6 @@ require('blink.cmp').setup {
       lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
     },
   },
-
-  snippets = { preset = 'luasnip' },
 
   -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
   -- which automatically downloads a prebuilt binary when enabled.

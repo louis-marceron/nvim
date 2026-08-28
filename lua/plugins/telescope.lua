@@ -1,23 +1,17 @@
--- Install Telescope's dependencies before Telescope itself.
-
 local plugins = {
   'https://github.com/nvim-lua/plenary.nvim',
   'https://github.com/nvim-telescope/telescope-ui-select.nvim',
+  'https://github.com/nvim-telescope/telescope.nvim',
 }
 
--- If encountering errors, see telescope-fzf-native README for installation instructions
--- The matching build hook is in `lua/pack.lua`.
 if vim.fn.executable 'make' == 1 then
   plugins[#plugins + 1] = 'https://github.com/nvim-telescope/telescope-fzf-native.nvim'
 end
 
--- Useful for getting pretty icons, but requires a Nerd Font.
 if vim.g.have_nerd_font then
   plugins[#plugins + 1] = 'https://github.com/nvim-tree/nvim-web-devicons'
 end
 
--- Fuzzy Finder (files, lsp, etc)
-plugins[#plugins + 1] = 'https://github.com/nvim-telescope/telescope.nvim'
 vim.pack.add(plugins, { load = true, confirm = false })
 
 -- Telescope is a fuzzy finder that comes with a lot of different things that

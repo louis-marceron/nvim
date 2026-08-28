@@ -7,19 +7,18 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear highlights o
 
 vim.keymap.set('i', 'jk', '<esc>', { desc = 'Leave insert mode' })
 
--- Doesn't seem to work since 'q' is closing the list
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic location list' })
 
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move the selection up' })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move the selection down' })
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move the selection down' })
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move the selection up' })
 
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Keep the cursor in the middle when doing half-page up jump' })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Keep the cursor in the middle when doing half-page down jump' })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center after jumping half a page down' })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center after jumping half a page up' })
 
 vim.keymap.set('n', 'n', 'nzzzv', { desc = 'Keep the cursor in the middle when searching for terms' })
 vim.keymap.set('n', 'N', 'Nzzzv', { desc = 'Keep the cursor in the middle when searching for terms' })
 
-vim.keymap.set('x', 'p', '"_dP', { desc = 'Paste without putting the delete content in the clipboard' })
+vim.keymap.set('x', 'p', 'P', { desc = 'Paste without replacing the default register' })
 
 vim.keymap.set({ 'n', 'v' }, '<leader>d', [["_d]], { desc = 'Delete without putting the deleted content in the Neovim clipboard' })
 
@@ -61,17 +60,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- Fix
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'qf',
-  callback = function()
-    -- Map <CR> to open the item under cursor when in the quickfix window
-    vim.keymap.set('n', '<CR>', '<CR>', {
-      desc = 'Jump to quickfix item',
-      buffer = true,
-      noremap = true,
-      silent = true,
-    })
-  end,
-})
 -- vim: ts=2 sts=2 sw=2 et

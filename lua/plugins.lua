@@ -1,4 +1,3 @@
--- Plugins are installed and configured by each module, in order.
 vim.pack.add({ 'https://github.com/NMAC427/guess-indent.nvim' }, { load = true, confirm = false })
 require('guess-indent').setup {}
 
@@ -19,18 +18,15 @@ require 'plugins.lint'
 require 'plugins.harpoon'
 require 'plugins.neogit'
 require 'plugins.snacks'
-
-vim.pack.add({ { src = 'https://github.com/rose-pine/neovim', name = 'rose-pine' } }, { load = true, confirm = false })
-
 require 'plugins.themery'
 require 'plugins.yazi'
-require 'plugins.jdtls'
 require 'plugins.oil'
 require 'plugins.go'
 require 'plugins.fff'
 require 'plugins.ts-context'
 require 'plugins.markview'
 require 'plugins.easy-dotnet'
+require 'plugins.flutter-tools'
 
 vim.pack.add({
   'https://github.com/dart-lang/dart-vim-plugin',

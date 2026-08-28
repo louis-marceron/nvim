@@ -6,12 +6,6 @@
 -- Make line numbers default
 vim.o.number = true
 
--- Enable all filetype plugins and syntax (if not enabled, for better startup)
-vim.cmd 'filetype plugin indent on'
-if vim.fn.exists 'syntax_on' ~= 1 then
-  vim.cmd 'syntax enable'
-end
-
 -- Show relative line number
 vim.o.relativenumber = true
 
@@ -24,14 +18,7 @@ vim.o.showmode = false
 -- Every wrapped line will continue visually indented
 vim.o.breakindent = true
 
--- Indent automatically
-vim.o.autoindent = true
-vim.o.smartindent = true
-
--- Indent wrapped lines to match line start
-vim.o.breakindent = true
-
--- Add padding for lists (if 'wrap' is set)
+-- Configure wrapped-line indentation
 vim.o.breakindentopt = 'list:-1'
 
 -- Save undo history
@@ -79,9 +66,6 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
---  Enable 24-bit RGB color in the TUI
-vim.opt.termguicolors = true
-
 -- Relative line number inside file explorer
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 
@@ -95,18 +79,7 @@ vim.opt.expandtab = true
 
 -- Fix yanking on WSL
 if vim.fn.has 'wsl' == 1 then
-  vim.g.clipboard = {
-    name = 'win32yank-wsl',
-    copy = {
-      ['+'] = 'win32yank.exe -i --crlf',
-      ['*'] = 'win32yank.exe -i --crlf',
-    },
-    paste = {
-      ['+'] = 'win32yank.exe -o --lf',
-      ['*'] = 'win32yank.exe -o --lf',
-    },
-    cache_enabled = 0,
-  }
+  vim.g.clipboard = 'win32yank'
 end
 
 -- vim: ts=2 sts=2 sw=2 et

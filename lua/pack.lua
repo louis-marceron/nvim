@@ -22,16 +22,14 @@ vim.api.nvim_create_autocmd('PackChanged', {
 
     if name == 'telescope-fzf-native.nvim' and vim.fn.executable 'make' == 1 then
       run_build(name, { 'make' }, event.data.path)
-    elseif name == 'LuaSnip' and vim.fn.has 'win32' ~= 1 and vim.fn.executable 'make' == 1 then
-      run_build(name, { 'make', 'install_jsregexp' }, event.data.path)
     elseif name == 'nvim-treesitter' then
       if not event.data.active then
         vim.cmd.packadd 'nvim-treesitter'
       end
       vim.cmd 'TSUpdate'
-    elseif name == 'fff.nvim' then
+    elseif name == 'fff' then
       if not event.data.active then
-        vim.cmd.packadd 'fff.nvim'
+        vim.cmd.packadd 'fff'
       end
       require('fff.download').download_or_build_binary()
     elseif name == 'go.nvim' then

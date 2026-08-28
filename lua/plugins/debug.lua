@@ -1,31 +1,12 @@
--- debug.lua
---
--- Shows how to use the DAP plugin to debug your code.
---
--- Primarily focused on configuring the debugger for Go, but can
--- be extended to other languages as well. That's why it's called
--- kickstart.nvim and not kitchen-sink.nvim ;)
-
--- NOTE: Yes, you can install new plugins here!
--- NOTE: And you can specify dependencies as well
 vim.pack.add({
-  -- Required dependency for nvim-dap-ui
   'https://github.com/nvim-neotest/nvim-nio',
-
-  -- Creates a beautiful debugger UI
+  'https://github.com/mfussenegger/nvim-dap',
   'https://github.com/rcarriga/nvim-dap-ui',
-
-  -- Installs the debug adapters for you
   'https://github.com/mason-org/mason.nvim',
   'https://github.com/jay-babu/mason-nvim-dap.nvim',
-
-  -- Add your own debuggers here
   'https://github.com/leoluz/nvim-dap-go',
-
-  'https://github.com/mfussenegger/nvim-dap',
 }, { load = true, confirm = false })
 
--- Basic debugging keymaps, feel free to change to your liking!
 vim.keymap.set('n', '<F5>', function()
   require('dap').continue()
 end, { desc = 'Debug: Start/Continue' })
@@ -58,31 +39,8 @@ end, { desc = 'Debug: See last session result.' })
 local dap = require 'dap'
 local dapui = require 'dapui'
 
-dap.configurations.java = {
-  {
-    type = 'java',
-    request = 'attach',
-    name = 'Debug (Attach) - Remote',
-    hostName = '127.0.0.1',
-    port = 5005,
-  },
-}
-
 require('mason-nvim-dap').setup {
-  -- Makes a best effort to setup the various debuggers with
-  -- reasonable debug configurations
-  automatic_installation = true,
-
-  -- You can provide additional configuration to the handlers,
-  -- see mason-nvim-dap README for more information
-  handlers = {},
-
-  -- You'll need to check that you have the required things installed
-  -- online, please don't ask me how to install them :)
-  ensure_installed = {
-    -- Update this to ensure that you have the debuggers for the langs you want
-    'delve',
-  },
+  ensure_installed = { 'delve' },
 }
 
 -- Dap UI setup
@@ -106,18 +64,6 @@ dapui.setup {
     },
   },
 }
-
--- Change breakpoint icons
--- vim.api.nvim_set_hl(0, 'DapBreak', { fg = '#e51400' })
--- vim.api.nvim_set_hl(0, 'DapStop', { fg = '#ffcc00' })
--- local breakpoint_icons = vim.g.have_nerd_font
---     and { Breakpoint = '', BreakpointCondition = '', BreakpointRejected = '', LogPoint = '', Stopped = '' }
---   or { Breakpoint = '●', BreakpointCondition = '⊜', BreakpointRejected = '⊘', LogPoint = '◆', Stopped = '⭔' }
--- for type, icon in pairs(breakpoint_icons) do
---   local tp = 'Dap' .. type
---   local hl = (type == 'Stopped') and 'DapStop' or 'DapBreak'
---   vim.fn.sign_define(tp, { text = icon, texthl = hl, numhl = hl })
--- end
 
 dap.listeners.after.event_initialized['dapui_config'] = dapui.open
 dap.listeners.before.event_terminated['dapui_config'] = dapui.close

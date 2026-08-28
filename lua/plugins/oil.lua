@@ -1,6 +1,5 @@
--- Optional dependencies
 vim.pack.add({
-  'https://github.com/echasnovski/mini.icons',
+  'https://github.com/nvim-mini/mini.nvim',
   'https://github.com/stevearc/oil.nvim',
 }, { load = true, confirm = false })
 

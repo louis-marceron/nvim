@@ -18,7 +18,7 @@ require('gitsigns').setup {
 
     local function map(mode, l, r, opts)
       opts = opts or {}
-      opts.buffer = bufnr
+      opts.buf = bufnr
       vim.keymap.set(mode, l, r, opts)
     end
 
@@ -51,7 +51,6 @@ require('gitsigns').setup {
     map('n', '<leader>hs', gitsigns.stage_hunk, { desc = 'git [s]tage hunk' })
     map('n', '<leader>hr', gitsigns.reset_hunk, { desc = 'git [r]eset hunk' })
     map('n', '<leader>hS', gitsigns.stage_buffer, { desc = 'git [S]tage buffer' })
-    map('n', '<leader>hu', gitsigns.stage_hunk, { desc = 'git [u]ndo stage hunk' })
     map('n', '<leader>hR', gitsigns.reset_buffer, { desc = 'git [R]eset buffer' })
     map('n', '<leader>hp', gitsigns.preview_hunk, { desc = 'git [p]review hunk' })
     map('n', '<leader>hb', gitsigns.blame_line, { desc = 'git [b]lame line' })
@@ -61,7 +60,7 @@ require('gitsigns').setup {
     end, { desc = 'git [D]iff against last commit' })
     -- Toggles
     map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
-    map('n', '<leader>tD', gitsigns.preview_hunk_inline, { desc = '[T]oggle git show [D]eleted' })
+    map('n', '<leader>hP', gitsigns.preview_hunk_inline, { desc = 'Git [P]review hunk inline' })
   end,
 }
 -- vim: ts=2 sts=2 sw=2 et
