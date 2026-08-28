@@ -2,12 +2,15 @@
 -- https://github.com/LazyVim/LazyVim/discussions/4470
 --
 -- https://eruizc.dev/blog/en/java-with-neovim/
-return {
-  'mfussenegger/nvim-jdtls',
-  dependencies = { 'folke/which-key.nvim' },
-  lazy = true,
-  ft = { 'java' },
-  config = function()
+vim.pack.add({
+  'https://github.com/folke/which-key.nvim',
+  'https://github.com/mfussenegger/nvim-jdtls',
+}, { load = true, confirm = false })
+
+vim.api.nvim_create_autocmd('FileType', {
+  group = vim.api.nvim_create_augroup('jdtls-start', { clear = true }),
+  pattern = 'java',
+  callback = function()
     require('jdtls').start_or_attach {
       cmd = {
         vim.fn.expand '$HOME/.local/share/nvim/mason/bin/jdtls',
@@ -15,4 +18,4 @@ return {
       },
     }
   end,
-}
+})
