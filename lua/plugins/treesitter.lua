@@ -44,10 +44,14 @@ vim.api.nvim_create_autocmd('User', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  desc = 'Enable Tree-sitter highlighting when a parser is available',
+  desc = 'Enable Tree-sitter highlighting and folding when a parser is available',
   group = vim.api.nvim_create_augroup('treesitter-start', { clear = true }),
   callback = function(event)
-    pcall(vim.treesitter.start, event.buf)
+    if pcall(vim.treesitter.start, event.buf) then
+      vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+      vim.wo[0][0].foldlevel = 99
+      vim.wo[0][0].foldmethod = 'expr'
+    end
   end,
 })
 
