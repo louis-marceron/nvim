@@ -8,6 +8,8 @@ icons.mock_nvim_web_devicons()
 local extra = require 'mini.extra'
 extra.setup()
 
+require('mini.pairs').setup()
+
 -- Better Around/Inside textobjects
 --
 -- Examples:
