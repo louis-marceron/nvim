@@ -3,4 +3,4 @@ vim.pack.add({ 'https://github.com/lukas-reineke/indent-blankline.nvim' }, { loa
 
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help ibl`
-require('ibl').setup {}
+require('ibl').setup()

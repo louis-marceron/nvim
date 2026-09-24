@@ -14,7 +14,6 @@ require('themery').setup {
     'rose-pine-main',
     'rose-pine-dawn',
   },
-  livePreview = true, -- Apply theme while picking. Default to true.
 }
 
 vim.keymap.set('n', '<leader>tt', function()

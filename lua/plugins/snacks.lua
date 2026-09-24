@@ -2,5 +2,6 @@ vim.pack.add({ 'https://github.com/folke/snacks.nvim' }, { load = true, confirm 
 
 ---@type snacks.Config
 require('snacks').setup {
+  bigfile = {},
   input = {},
 }

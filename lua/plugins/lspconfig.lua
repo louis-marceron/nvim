@@ -14,9 +14,9 @@ require('lazydev').setup {
   },
 }
 
-require('mason').setup {}
+require('mason').setup()
 
-require('fidget').setup {}
+require('fidget').setup()
 
 local lsp_group = vim.api.nvim_create_augroup('lsp-config', { clear = true })
 
@@ -46,41 +46,28 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
       end, '[T]oggle Inlay [H]ints')
     end
+
+    MiniClue.ensure_buf_triggers(event.buf)
   end,
 })
 
-local highlight_method = vim.lsp.protocol.Methods.textDocument_documentHighlight
-vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-  desc = 'Highlight references under the cursor',
-  group = lsp_group,
-  callback = function(event)
-    if vim.lsp.get_clients({ bufnr = event.buf, method = highlight_method })[1] then
-      vim.lsp.buf.document_highlight()
-    end
-  end,
-})
-
-vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI', 'LspDetach' }, {
-  desc = 'Clear LSP reference highlights',
-  group = lsp_group,
-  callback = function(event)
-    vim.lsp.util.buf_clear_references(event.buf)
-  end,
-})
+local diagnostic_icons = {
+  [vim.diagnostic.severity.ERROR] = '󰅚 ',
+  [vim.diagnostic.severity.WARN] = '󰀪 ',
+  [vim.diagnostic.severity.INFO] = '󰋽 ',
+  [vim.diagnostic.severity.HINT] = '󰌶 ',
+}
 
 vim.diagnostic.config {
   severity_sort = true,
   float = { border = 'rounded', source = 'if_many' },
   underline = { severity = vim.diagnostic.severity.ERROR },
-  signs = vim.g.have_nerd_font and {
-    text = {
-      [vim.diagnostic.severity.ERROR] = '󰅚 ',
-      [vim.diagnostic.severity.WARN] = '󰀪 ',
-      [vim.diagnostic.severity.INFO] = '󰋽 ',
-      [vim.diagnostic.severity.HINT] = '󰌶 ',
-    },
-  } or {},
-  virtual_text = { source = 'if_many', spacing = 2 },
+  signs = { text = diagnostic_icons },
+  virtual_text = {
+    source = 'if_many',
+    spacing = 2,
+    prefix = '●',
+  },
 }
 
 vim.filetype.add {
@@ -117,11 +104,10 @@ local servers = {
 
 require('mason-lspconfig').setup {
   ensure_installed = servers,
-  automatic_enable = servers,
 }
 
 require('mason-tool-installer').setup {
-  ensure_installed = { 'stylua', 'tree-sitter-cli' },
+  ensure_installed = { 'goimports', 'stylua', 'tree-sitter-cli' },
 }
 
 -- vim: ts=2 sts=2 sw=2 et

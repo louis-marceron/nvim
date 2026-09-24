@@ -1,17 +1,3 @@
--- Build plugins after `vim.pack` installs or updates them.
-local function run_build(name, cmd, cwd)
-  local result = vim.system(cmd, { cwd = cwd }):wait()
-  if result.code ~= 0 then
-    local stderr = result.stderr or ''
-    local stdout = result.stdout or ''
-    local output = stderr ~= '' and stderr or stdout
-    if output == '' then
-      output = 'No output from build command.'
-    end
-    vim.notify(('Build failed for %s:\n%s'):format(name, output), vim.log.levels.ERROR)
-  end
-end
-
 vim.api.nvim_create_autocmd('PackChanged', {
   callback = function(event)
     local name = event.data.spec.name
@@ -20,9 +6,7 @@ vim.api.nvim_create_autocmd('PackChanged', {
       return
     end
 
-    if name == 'telescope-fzf-native.nvim' and vim.fn.executable 'make' == 1 then
-      run_build(name, { 'make' }, event.data.path)
-    elseif name == 'nvim-treesitter' then
+    if name == 'nvim-treesitter' then
       if not event.data.active then
         vim.cmd.packadd 'nvim-treesitter'
       end

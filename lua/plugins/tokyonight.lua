@@ -1,8 +1,4 @@
--- You can easily change to a different colorscheme.
--- Change the name of the colorscheme plugin below, and then
--- change the command in the config to whatever the name of that colorscheme is.
---
--- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+-- Use `:colorscheme <Tab>` to list installed themes.
 vim.pack.add({ 'https://github.com/folke/tokyonight.nvim' }, { load = true, confirm = false })
 
 ---@diagnostic disable-next-line: missing-fields

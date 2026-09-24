@@ -2,21 +2,21 @@
 vim.pack.add({ 'https://github.com/stevearc/conform.nvim' }, { load = true, confirm = false })
 
 require('conform').setup {
-  notify_on_error = false,
   format_on_save = function(bufnr)
     -- Disable "format_on_save lsp_fallback" for languages that don't
     -- have a well standardized coding style. You can add additional
     -- languages here or re-enable it for the disabled ones.
-    local disable_filetypes = { c = true, cpp = true, go = true }
+    local disable_filetypes = { c = true, cpp = true }
     if disable_filetypes[vim.bo[bufnr].filetype] then
       return nil
     end
     return {
-      timeout_ms = 500,
+      timeout_ms = vim.bo[bufnr].filetype == 'go' and 2000 or nil,
       lsp_format = 'fallback',
     }
   end,
   formatters_by_ft = {
+    go = { 'goimports' },
     lua = { 'stylua' },
     -- yaml = { 'yamlfmt' },
     -- Conform can also run multiple formatters sequentially

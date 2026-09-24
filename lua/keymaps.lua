@@ -9,9 +9,6 @@ vim.keymap.set('i', 'jk', '<esc>', { desc = 'Leave insert mode' })
 
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic location list' })
 
-vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move the selection down' })
-vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move the selection up' })
-
 vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = 'Center after jumping half a page down' })
 vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Center after jumping half a page up' })
 

@@ -9,14 +9,6 @@
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
     },
-    "copilot.vim": {
-      "rev": "a12fd5672110c8aa7e3c8419e28c96943ca179be",
-      "src": "https://github.com/github/copilot.vim"
-    },
-    "dart-vim-plugin": {
-      "rev": "13fa42674f1685a1c5a095c1dac74d94e43a9849",
-      "src": "https://github.com/dart-lang/dart-vim-plugin"
-    },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
@@ -36,10 +28,6 @@
     "flutter-tools.nvim": {
       "rev": "11ca760211fcdfef1794df8cf2ff2b78aaf102b9",
       "src": "https://github.com/nvim-flutter/flutter-tools.nvim"
-    },
-    "gitsigns.nvim": {
-      "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
-      "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "go.nvim": {
       "rev": "0768d79bbebdb1a112a845f9cd6293bfbd544dab",
@@ -66,9 +54,9 @@
       "rev": "ff2cbcba459b637ec3fd165a2be59b7bbaeedf0d",
       "src": "https://github.com/folke/lazydev.nvim"
     },
-    "markview.nvim": {
-      "rev": "5d9fc2aa6dd1c2fbdc7a68bc79b300e9967b21ff",
-      "src": "https://github.com/OXY2DEV/markview.nvim"
+    "lensline.nvim": {
+      "rev": "93c14465c742511a645bb454db33ddd96f23bf76",
+      "src": "https://github.com/oribarilan/lensline.nvim"
     },
     "mason-lspconfig.nvim": {
       "rev": "5d32a9b8de9f90466797a740edb0fb4b3c27e423",
@@ -147,10 +135,6 @@
       "rev": "882c996cf28183f4d63640de0b4c02ec886d01f2",
       "src": "https://github.com/folke/snacks.nvim"
     },
-    "telescope-fzf-native.nvim": {
-      "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",
-      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
-    },
     "telescope-ui-select.nvim": {
       "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
       "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
@@ -163,17 +147,9 @@
       "rev": "bfa58f4b279d21cb515b28023e1b68ec908584b2",
       "src": "https://github.com/zaldih/themery.nvim"
     },
-    "todo-comments.nvim": {
-      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
-      "src": "https://github.com/folke/todo-comments.nvim"
-    },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
-    },
-    "which-key.nvim": {
-      "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
-      "src": "https://github.com/folke/which-key.nvim"
     },
     "yazi.nvim": {
       "rev": "0be14b2ff3e1eaa84c3df3c05034694cfbbaa081",

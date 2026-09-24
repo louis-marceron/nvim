@@ -12,4 +12,4 @@ vim.keymap.set('n', '<leader>wc', '<cmd>Yazi cwd<cr>', { desc = "Open the file m
 vim.keymap.set('n', '<c-up>', '<cmd>Yazi toggle<cr>', { desc = 'Resume the last yazi session' })
 
 ---@type YaziConfig
-require('yazi').setup {}
+require('yazi').setup()

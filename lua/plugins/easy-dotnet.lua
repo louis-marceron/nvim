@@ -4,4 +4,6 @@ vim.pack.add({
   'https://github.com/GustavEikaas/easy-dotnet.nvim',
 }, { load = true, confirm = false })
 
-require('easy-dotnet').setup()
+require('easy-dotnet').setup {
+  lsp = { auto_refresh_codelens = false },
+}
