@@ -1,7 +1,7 @@
 vim.pack.add({
   'https://github.com/folke/lazydev.nvim',
   { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range '1.*' },
-}, { load = true, confirm = false })
+}, { confirm = false })
 
 --- @module 'blink.cmp'
 --- @type blink.cmp.Config

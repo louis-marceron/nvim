@@ -4,7 +4,7 @@ local plugins = {
   'https://github.com/nvim-telescope/telescope.nvim',
 }
 
-vim.pack.add(plugins, { load = true, confirm = false })
+vim.pack.add(plugins, { confirm = false })
 
 local telescope = require 'telescope'
 telescope.setup {

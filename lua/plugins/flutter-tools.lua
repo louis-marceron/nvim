@@ -2,7 +2,7 @@ vim.pack.add({
   'https://github.com/nvim-lua/plenary.nvim',
   { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range '1.*' },
   'https://github.com/nvim-flutter/flutter-tools.nvim',
-}, { load = true, confirm = false })
+}, { confirm = false })
 
 require('flutter-tools').setup {
   dev_log = {

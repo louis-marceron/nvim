@@ -1,5 +1,5 @@
 -- Autoformat
-vim.pack.add({ 'https://github.com/stevearc/conform.nvim' }, { load = true, confirm = false })
+vim.pack.add({ 'https://github.com/stevearc/conform.nvim' }, { confirm = false })
 
 require('conform').setup {
   format_on_save = function(bufnr)

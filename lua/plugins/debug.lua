@@ -2,10 +2,8 @@ vim.pack.add({
   'https://github.com/nvim-neotest/nvim-nio',
   'https://github.com/mfussenegger/nvim-dap',
   'https://github.com/rcarriga/nvim-dap-ui',
-  'https://github.com/mason-org/mason.nvim',
-  'https://github.com/jay-babu/mason-nvim-dap.nvim',
   'https://github.com/leoluz/nvim-dap-go',
-}, { load = true, confirm = false })
+}, { confirm = false })
 
 vim.keymap.set('n', '<F5>', function()
   require('dap').continue()
@@ -38,10 +36,6 @@ end, { desc = 'Debug: See last session result.' })
 
 local dap = require 'dap'
 local dapui = require 'dapui'
-
-require('mason-nvim-dap').setup {
-  ensure_installed = { 'delve' },
-}
 
 -- Dap UI setup
 -- For more information, see |:help nvim-dap-ui|

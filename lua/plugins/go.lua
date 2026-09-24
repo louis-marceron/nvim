@@ -3,7 +3,7 @@ vim.pack.add({
   'https://github.com/neovim/nvim-lspconfig',
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
   'https://github.com/ray-x/go.nvim',
-}, { load = true, confirm = false })
+}, { confirm = false })
 
 require('go').setup {
   lsp_codelens = false,

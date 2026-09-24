@@ -1,6 +1,6 @@
 vim.pack.add({
   { src = 'https://github.com/nvim-treesitter/nvim-treesitter', version = 'main' },
-}, { load = true, confirm = false })
+}, { confirm = false })
 
 local parsers = {
   'bash',

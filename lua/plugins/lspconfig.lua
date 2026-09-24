@@ -6,7 +6,7 @@ vim.pack.add({
   'https://github.com/j-hui/fidget.nvim',
   { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range '1.*' },
   'https://github.com/neovim/nvim-lspconfig',
-}, { load = true, confirm = false })
+}, { confirm = false })
 
 require('lazydev').setup {
   library = {
@@ -102,12 +102,17 @@ local servers = {
   'yamlls',
 }
 
-require('mason-lspconfig').setup {
-  ensure_installed = servers,
-}
+vim.lsp.enable(servers)
 
 require('mason-tool-installer').setup {
-  ensure_installed = { 'goimports', 'stylua', 'tree-sitter-cli' },
+  ensure_installed = vim.list_extend(vim.deepcopy(servers), {
+    'delve',
+    'goimports',
+    'stylua',
+    'tree-sitter-cli',
+  }),
+  start_delay = 3000,
+  debounce_hours = 24,
 }
 
 -- vim: ts=2 sts=2 sw=2 et

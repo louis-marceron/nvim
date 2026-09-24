@@ -1,4 +1,4 @@
-vim.pack.add({ 'https://github.com/dmtrKovalenko/fff' }, { load = true, confirm = false })
+vim.pack.add({ 'https://github.com/dmtrKovalenko/fff' }, { confirm = false })
 
 require('fff').setup { lazy_sync = true }
 

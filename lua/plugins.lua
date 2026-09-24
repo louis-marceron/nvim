@@ -1,4 +1,4 @@
-vim.pack.add({ 'https://github.com/NMAC427/guess-indent.nvim' }, { load = true, confirm = false })
+vim.pack.add({ 'https://github.com/NMAC427/guess-indent.nvim' }, { confirm = false })
 require('guess-indent').setup()
 
 require 'plugins.mini'
@@ -7,7 +7,6 @@ require 'plugins.lspconfig'
 require 'plugins.lensline'
 require 'plugins.conform'
 require 'plugins.blink-cmp'
-require 'plugins.tokyonight'
 require 'plugins.treesitter'
 require 'plugins.autopairs'
 require 'plugins.debug'

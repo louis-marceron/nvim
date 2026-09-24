@@ -1,5 +1,5 @@
 -- Collection of various small independent plugins/modules
-vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' }, { load = true, confirm = false })
+vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' }, { confirm = false })
 
 local icons = require 'mini.icons'
 icons.setup { style = vim.g.have_nerd_font and 'glyph' or 'ascii' }

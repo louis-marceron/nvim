@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 -- Leaders must be set before plugins define mappings.
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '

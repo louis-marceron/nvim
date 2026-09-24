@@ -1,6 +1,6 @@
 vim.pack.add({
   'https://github.com/stevearc/oil.nvim',
-}, { load = true, confirm = false })
+}, { confirm = false })
 
 ---@module 'oil'
 ---@type oil.SetupOpts
