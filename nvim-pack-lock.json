@@ -78,6 +78,10 @@
       "rev": "c51a1dc7e0e0f40c4c396a2b1ceaa44b44e96032",
       "src": "https://github.com/NeogitOrg/neogit"
     },
+    "nvim-autopairs": {
+      "rev": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
     "nvim-dap": {
       "rev": "c9a0738e45f1bd41d792a126941348dce661cf9b",
       "src": "https://github.com/mfussenegger/nvim-dap"
@@ -134,14 +138,6 @@
     "telescope.nvim": {
       "rev": "40aedd8a68c78a656a10a8d62d80c54af59420fb",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
-    },
-    "themery.nvim": {
-      "rev": "bfa58f4b279d21cb515b28023e1b68ec908584b2",
-      "src": "https://github.com/zaldih/themery.nvim"
-    },
-    "tokyonight.nvim": {
-      "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
-      "src": "https://github.com/folke/tokyonight.nvim"
     },
     "yazi.nvim": {
       "rev": "c7fe47a09bbf9863e995508e91d50b6cf1a6b554",

@@ -1,6 +1,7 @@
-require 'plugins.themery'
+require 'plugins.theme'
 require 'plugins.guess-indent'
 require 'plugins.mini'
+require 'plugins.autopairs'
 require 'plugins.telescope'
 require 'plugins.lspconfig'
 require 'plugins.lensline'
